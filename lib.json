@@ -1,0 +1,63 @@
+{
+    "caly_stan": 2046,
+    "historia": [
+        [
+            "zakup",
+            "nem",
+            2
+        ],
+        [
+            "saldo",
+            "free money",
+            0
+        ],
+        [
+            "saldo",
+            "uyoijk",
+            54
+        ],
+        [
+            "sprzedaz",
+            "Rower",
+            1
+        ],
+        [
+            "sprzedaz",
+            "Rower",
+            1
+        ],
+        [
+            "sprzedaz",
+            "Rower",
+            1
+        ],
+        [
+            "sprzedaz",
+            "Rower",
+            1
+        ],
+        [
+            "sprzedaz",
+            "Srubokret",
+            1
+        ]
+    ],
+    "slownik_produktow": {
+        "Rower": 6,
+        "Srubokret": 12,
+        "Opony": 22,
+        "Detki": 6,
+        "Hulajnoga": 8,
+        "Pompka": 20,
+        "nem": 2
+    },
+    "cena_produktow": {
+        "Rower": 980,
+        "Srubokret": 30,
+        "Opony": 60,
+        "Detki": 29,
+        "Hulajnoga": 1400,
+        "Pompka": 55,
+        "nem": 0
+    }
+}

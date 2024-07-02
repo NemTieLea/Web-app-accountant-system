@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Current Stock and Balance</h2>
+<p>Balance: {{ state['caly_stan'] }}</p>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class="flashes">
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+<h2>Purchase</h2>
+<form action="{{ url_for('purchase') }}" method="POST">
+    <label for="product_name">Product Name:</label>
+    <input type="text" id="product_name" name="product_name" required>
+    <label for="unit_price">Unit Price:</label>
+    <input type="number" id="unit_price" name="unit_price" required>
+    <label for="number_of_pieces">Number of Pieces:</label>
+    <input type="number" id="number_of_pieces" name="number_of_pieces" required>
+    <input type="submit" value="Purchase">
+</form>
+
+<h2>Sale</h2>
+<form action="{{ url_for('sale') }}" method="POST">
+    <label for="product_name">Product Name:</label>
+    <input type="text" id="product_name" name="product_name" required>
+    <label for="number_of_pieces">Number of Pieces:</label>
+    <input type="number" id="number_of_pieces" name="number_of_pieces" required>
+    <input type="submit" value="Sell">
+</form>
+
+<h2>Balance Change</h2>
+<form action="{{ url_for('balance_change') }}" method="POST">
+    <label for="comment">Comment:</label>
+    <input type="text" id="comment" name="comment" required>
+    <label for="value">Value:</label>
+    <input type="number" id="value" name="value" required>
+    <input type="submit" value="Change Balance">
+</form>
+
+<h2>Current Stock</h2>
+<table>
+    <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Price</th>
+    </tr>
+    {% for product, quantity in state['slownik_produktow'].items() %}
+    <tr>
+        <td>{{ product }}</td>
+        <td>{{ quantity }}</td>
+        <td>{{ state['cena_produktow'][product] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
